@@ -1,0 +1,41 @@
+Instructions: Complete the challenge as described below and then 
+respond to your challenge email with a link to a functioning demo 
+and source code. Usage of framework and language documentation is 
+permitted. We plan to conduct interviews and make hiring decisions 
+in the next 2-3 weeks. 
+Scenario: A spy is trying to decrypt an encrypted code and needs 
+a tool that lets them count the number of times a character 
+appears in the text. Help them build a dashboard that uses a 
+fast character counting algorithm that displays the number of 
+characters in the text and the 5 most 
+frequent characters. 
+
+Requirements: 
+Build a React web-app to let users count characters with the following limitations: 
+
+● The web-app has a text area. 
+DONE
+
+● Text of any length may be entered in the text area. 
+The web app should count and display the number 
+of times each character appeared in the text. 
+HALF DONE
+
+● The character and their respective counts 
+should be displayed in the order that the characters
+appeared in the original text. 
+DONE
+
+● Web app should also highlight the 5 most frequent characters in the text.
+ 
+● (Bonus) Use Tailwind CSS for any and all styling. 
+
+Evaluation: 
+You will be evaluated on the following criterias: 
+
+● Completion of your code—how well the 
+final product matches with the given requirements. 
+
+● Code readability. 
+
+● Handling of edge cases, if any.
