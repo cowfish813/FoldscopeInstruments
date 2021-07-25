@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+// import ListItems from "./listItems";
 
 const Decipher = () => {
-    const [cipher, setCipher] = useState("");
-    const [topFive, setTopFive] = useState(null);
-    const orderArray = [];
-    const value = {};
-    const listItems = document.getElementById("list-items");
+    const [cipher, setCipher] = useState(""); //entered string in text area
+    const [component, setComponent] = useState(<div></div>);
+    const orderArray = []; //char order
+    const value = {}; //object obj = chars, value = appearance
+    let boldGreaterValue = 0;
+    // const listItems = document.getElementById("list-items");
 
     const handleChange = (event) => {
         event.preventDefault();
@@ -27,21 +29,41 @@ const Decipher = () => {
         } //loads orders and values
 
         const top = Object.values(value); //array of values
-        const fifthGreatest = top.sort((a, b) => b - a)[4]; //sorted
-        setTopFive(fifthGreatest);
-    }
+        const fifthGreatest = top.sort((a, b) => b - a); //sorted
+        if (fifthGreatest.length > 5) {
+            boldGreaterValue = fifthGreatest[4];
+            //sets 5th value
+        } else {
+            boldGreaterValue = fifthGreatest[fifthGreatest.length - 1];
+            //takes last value
+        } //addresses edge cases of not enough chars
+
+        // console.log(orderArray, value, fifthGreatest, boldGreaterValue, "submit");
+    } //order, value, and top5 values completed
 
     useEffect(() => {
-        for (let i = 0; i < orderArray.length; i++) {
-            const char = orderArray[i];
-            if (value[char] >= topFive) {
-                //append bold
-            } else {
-                //append not bold
-            }
-        } //render, maybe make a separate function
-    }, [])
+        if (boldGreaterValue && orderArray.length) {
+            console.log(orderArray, value, boldGreaterValue, "useeffect working");
+            setComponent(listItems()); //execute listItems
+        } 
+    }, [boldGreaterValue, orderArray])
 
+    const listItems = () => {
+        console.log(orderArray, "render")
+        return (
+            orderArray.map( (char, i) => {
+                return (
+                    <div className="item-container">
+                        <li className="list-item">working???</li>
+                        <li className="list-item">{char}</li>
+                        <li className="list-item">{value[char]}</li>
+                    </div>
+                )
+            })
+        )
+    }
+
+    
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
@@ -50,8 +72,7 @@ const Decipher = () => {
             </form>
 
             <div id="list-items" className="">
-                {/* render divs/list items of chars & values */}
-
+                {component}
             </div>
         </div>
     )
