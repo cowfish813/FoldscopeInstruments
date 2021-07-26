@@ -96,7 +96,7 @@ const Decipher = () => {
                 <form className="" onSubmit={handleSubmit}>
                     <div className="">
                         <textarea className="textbox" onChange={handleChange} />
-                        <button className="">Decrpyt :O</button>
+                        <button className="">Compute</button>
                     </div>
                 </form>
 
