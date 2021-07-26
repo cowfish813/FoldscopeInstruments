@@ -1,11 +1,19 @@
 
 
 .bigBorder {
-    border: 5px solid black;
+    border: 5px solid green;
 }
 
 .border {
     border: solid 1px blue;
+}
+
+.textbox {
+    border: solid black 1px;
+    border-radius: 10px;
+    height: 500px;
+    width: 500px;
+    resize: none;
 }
 
 /* helpers */
