@@ -111,8 +111,7 @@ const Decipher = () => {
     return (
         <div className="container flex flex-row just-c bg-white dark:bg-black">
             <div className="">
-                <h1>Greetings Spy</h1>
-                <img src="spy.jpg" alt="spy logo" />
+                <h1>Greetings</h1>
                 <form className="" onSubmit={handleSubmit}>
                     <div className="">
                         <textarea className="textbox" onChange={handleChange} />
