@@ -6,6 +6,11 @@
     resize: none;
 }
 
+.spy-logo {
+    /* height: 150px; */
+    width: 150px;
+}
+
 .bigBorder {
     border: 5px solid green;
 }
@@ -14,8 +19,37 @@
     border: solid 1px blue;
 }
 
+.listed-item {
+    margin: 5px;
+}
+.item-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cipher_button {
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: large;
+    padding: 10px;
+    margin: 10px;
+}
+
+#cipher-container {
+    height: 100vh;
+    background: grey;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.highlight {
+    background: yellow;
+}
 
 /* helpers */
+.flex-align-center {
+    align-items: center;
+}
 
 .flex-row {
     flex-direction: row;
@@ -27,4 +61,8 @@
 
 .just-c {
     justify-content: center;
+}
+
+.mgn-top5 {
+    margin-top: 15px;
 }

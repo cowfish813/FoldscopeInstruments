@@ -12,13 +12,6 @@ const Decipher = () => {
             // > = bold
             // < = not bold
 
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    // if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    //     document.documentElement.classList.add('dark')
-    // } else {
-    //     document.documentElement.classList.remove('dark')
-    // }
-
     const handleDarkMode = () => {
         if (localStorage.theme === "dark") {
             localStorage.theme = "light";
@@ -26,9 +19,6 @@ const Decipher = () => {
             localStorage.theme = "dark";
         }
     }
-
-    // Whenever the user explicitly chooses to respect the OS preference
-    localStorage.removeItem('theme')
 
     const handleChange = (event) => {
         event.preventDefault();
@@ -66,35 +56,32 @@ const Decipher = () => {
 
     const listItems = () => {
         if (orderArray) {
-            console.log(orderArray, "render initiated")
             return (
                 orderArray.map( (char, i) => {
                     if (value[char] >= boldGreaterValue) {
                         return (
-                            <div className="item-container bigBorder flex">
-                                <div className="list-item flex row">
-                                    <span className="listed-item ">
+                            <div className="item-container border highlight flex">
+                                    <div className="listed-item">
                                         <strong>Character: </strong>
                                         {char}
-                                    </span>
-                                    <span className="listed-item ">   
+                                    </div>
+                                    <div className="listed-item">   
                                         <strong>Amount:</strong> 
                                         {value[char]}
-                                    </span>
-                                </div>
+                                    </div>
                             </div>
                         )
                     } else {
                         return (
-                            <div className="item-container border">
-                                <div className="listed-item flex row">
-                                    <strong>Character:</strong> 
-                                    {char}
-                                </div>
-                                <div className="listed-item">
-                                    <strong>Amount:</strong> 
-                                    {value[char]}
-                                </div>
+                            <div className="item-container border flex">
+                                    <div className="listed-item">
+                                        <strong>Character: </strong> 
+                                        {char}
+                                    </div>
+                                    <div className="listed-item">
+                                        <strong>Amount: </strong> 
+                                        {value[char]}
+                                    </div>
                             </div>
                         )
                     }
@@ -109,14 +96,15 @@ const Decipher = () => {
 
     
     return (
-        <div className="container flex flex-row just-c bg-white dark:bg-black">
+        <div id="cipher-container" className=".mgn-top5 flex flex-row just-c bg-white dark:bg-black">
             <div className="">
-                <h1>Greetings</h1>
-                <form className="" onSubmit={handleSubmit}>
-                    <div className="">
+                <div id="cipher_header" className="flex just-c flex-col flex-align-center">
+                    <h1 id="cipher-greet" className=" ">Decoder</h1>
+                    <img className="spy-logo" src="https://raw.githubusercontent.com/cowfish813/FoldscopeInstruments/main/public/Spy_emblem_BLU.png" alt="" />
+                </div>
+                <form className="flex just-c flex-col flex-align-center" onSubmit={handleSubmit}>
                         <textarea className="textbox" onChange={handleChange} />
-                        <button className="">Compute</button>
-                    </div>
+                        <button className="cipher_button">Compute</button>
                 </form>
 
                 <div id="list-items" className="">
