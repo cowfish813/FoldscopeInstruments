@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import img from '../../public/spy.png'
 
 const Decipher = () => {
     const [cipher, setCipher] = useState(""); //entered string in text area
@@ -10,6 +11,24 @@ const Decipher = () => {
         //value for all to be compared to
             // > = bold
             // < = not bold
+
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    // if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    //     document.documentElement.classList.add('dark')
+    // } else {
+    //     document.documentElement.classList.remove('dark')
+    // }
+
+    const handleDarkMode = () => {
+        if (localStorage.theme === "dark") {
+            localStorage.theme = "light";
+        } else {
+            localStorage.theme = "dark";
+        }
+    }
+
+    // Whenever the user explicitly chooses to respect the OS preference
+    localStorage.removeItem('theme')
 
     const handleChange = (event) => {
         event.preventDefault();
@@ -35,7 +54,7 @@ const Decipher = () => {
 
         if (fifthGreatest.length > 5) {
             //addresses edge cases if not enough chars
-            //may need to consider 
+            //may need to consider if first 5 or based on values
             boldGreaterValue = fifthGreatest[4];//sets 5th value
         } else {
             boldGreaterValue = fifthGreatest[fifthGreatest.length - 1];
@@ -90,9 +109,10 @@ const Decipher = () => {
 
     
     return (
-        <div className="container flex flex-row just-c">
+        <div className="container flex flex-row just-c bg-white dark:bg-black">
             <div className="">
                 <h1>Greetings Spy</h1>
+                <img src="spy.jpg" alt="spy logo" />
                 <form className="" onSubmit={handleSubmit}>
                     <div className="">
                         <textarea className="textbox" onChange={handleChange} />
