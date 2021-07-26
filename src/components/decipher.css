@@ -9,9 +9,9 @@
 }
 
 /* helpers */
-.flex {
+/* .flex {
     display: flex;
-}
+} */
 
 .flex-row {
     flex-direction: row;

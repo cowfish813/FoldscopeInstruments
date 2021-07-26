@@ -19,7 +19,7 @@ DONE
 ● Text of any length may be entered in the text area. 
 The web app should count and display the number 
 of times each character appeared in the text. 
-HALF DONE
+DONE
 
 ● The character and their respective counts 
 should be displayed in the order that the characters

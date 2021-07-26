@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import ListItems from "./listItems";
 
 const Decipher = () => {
     const [cipher, setCipher] = useState(""); //entered string in text area
@@ -8,7 +7,6 @@ const Decipher = () => {
     const orderArray = []; //char order
     const value = {}; //object obj = chars, value = appearance
     let boldGreaterValue = 0;
-    // const listItems = document.getElementById("list-items");
 
     const handleChange = (event) => {
         event.preventDefault();
