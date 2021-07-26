@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-// import img from '../../public/spy.png'
+import React, { useState } from "react";
 
 const Decipher = () => {
     const [cipher, setCipher] = useState(""); //entered string in text area
@@ -44,7 +43,6 @@ const Decipher = () => {
 
         if (fifthGreatest.length > 5) {
             //addresses edge cases if not enough chars
-            //may need to consider if first 5 or based on values
             boldGreaterValue = fifthGreatest[4];//sets 5th value
         } else {
             boldGreaterValue = fifthGreatest[fifthGreatest.length - 1];
