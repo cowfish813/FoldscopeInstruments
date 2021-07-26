@@ -99,7 +99,7 @@ const Decipher = () => {
         <div id="cipher-container" className=".mgn-top5 flex flex-row just-c bg-white dark:bg-black">
             <div className="">
                 <div id="cipher_header" className="flex just-c flex-col flex-align-center">
-                    <h1 id="cipher-greet" className=" ">Decoder</h1>
+                    <h1 id="cipher-greet" className="header-title">Decoder</h1>
                     <img className="spy-logo" src="https://raw.githubusercontent.com/cowfish813/FoldscopeInstruments/main/public/Spy_emblem_BLU.png" alt="" />
                 </div>
                 <form className="flex just-c flex-col flex-align-center" onSubmit={handleSubmit}>

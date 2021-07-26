@@ -16,7 +16,7 @@
 }
 
 .border {
-    border: solid 1px blue;
+    border: solid 1px #5885A2;
 }
 
 .listed-item {
@@ -43,7 +43,7 @@
 }
 
 .highlight {
-    background: yellow;
+    background: #F3A956;
 }
 
 /* helpers */
@@ -65,4 +65,12 @@
 
 .mgn-top5 {
     margin-top: 15px;
+}
+
+.font {
+    color: #5885A2;
+}
+
+.header-title {
+    font-size: 50px;
 }
