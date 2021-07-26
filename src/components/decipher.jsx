@@ -38,30 +38,40 @@ const Decipher = () => {
             //takes last value
         } //addresses edge cases of not enough chars
 
-        // console.log(orderArray, value, fifthGreatest, boldGreaterValue, "submit");
+        // console.log(orderArray, value, fifthGreatest, boldGreaterValue, "submit"); 
+        //working but not outside!? why!?
+        setComponent(listItems()); //execute listItems
     } //order, value, and top5 values completed
 
     useEffect(() => {
-        if (boldGreaterValue && orderArray.length) {
+        // console.log(orderArray, boldGreaterValue)
+        if (boldGreaterValue && orderArray.length && value) {
             console.log(orderArray, value, boldGreaterValue, "useeffect working");
             setComponent(listItems()); //execute listItems
+            console.log("if");
         } 
-    }, [boldGreaterValue, orderArray])
+        //else
+    }, [boldGreaterValue, orderArray, value]) //set component to render
 
     const listItems = () => {
-        console.log(orderArray, "render")
-        return (
-            orderArray.map( (char, i) => {
-                return (
-                    <div className="item-container">
-                        <li className="list-item">working???</li>
-                        <li className="list-item">{char}</li>
-                        <li className="list-item">{value[char]}</li>
-                    </div>
-                )
-            })
-        )
-    }
+        if (orderArray) {
+            console.log(orderArray, "render initiated")
+            return (
+                orderArray.map( (char, i) => {
+                    return (
+                        <div className="item-container">
+                            <span className="list-item">Character: {char}</span>
+                            <span className="list-item">Amount: {value[char]}</span>
+                        </div>
+                    )
+                })
+            )
+        } else {
+            return (
+                <div></div>
+            )
+        }
+    } //renders list
 
     
     return (
