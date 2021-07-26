@@ -29,6 +29,7 @@ DONE
 ● Web app should also highlight the 5 most frequent characters in the text.
  
 ● (Bonus) Use Tailwind CSS for any and all styling. 
+ADDED
 
 Evaluation: 
 You will be evaluated on the following criterias: 
